@@ -29,7 +29,7 @@ public class EqualActivity extends AppCompatActivity {
 
                 Intent intent = getIntent();
                 String result = intent.getStringExtra(FunctionActivity.MY_KEY3);
-                resultText.setText("Результатом является число " + result);
+                resultText.setText("Абай, результатом сложнейших математических уровнений является число " + result);
             }
         });
 
@@ -43,12 +43,10 @@ public class EqualActivity extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_TEXT, letter);
                 intent.setType("text/plain");
 
-                if(intent.resolveActivity(getPackageManager()) != null) {
+                if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
                 }
-
             }
         });
-
     }
 }

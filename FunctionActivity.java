@@ -17,10 +17,7 @@ public class FunctionActivity extends AppCompatActivity {
 
     Button btnAdd, btnSub, btnMulti, btnDiv;
 
-    //int Val1, Val2;
-
-    boolean addition, subtract, multiplication, division;
-
+    int Val1, Val2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,29 +36,34 @@ public class FunctionActivity extends AppCompatActivity {
         num2Text.setText(sNum);
 
         btnAdd = findViewById(R.id.btn_add);
+
+        Val1 = Integer.parseInt(fNum);
+        Val2 = Integer.parseInt(sNum);
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (fNum != null) {
-                    if (sNum != null) {
-                        String result;
-                        result = fNum + sNum; // здесь происходит просто конкатинация. Не смог пока сложить числа. В процессе.
-                        addition = true;
-                        Intent intent = new Intent(FunctionActivity.this, EqualActivity.class);
-                        intent.putExtra(MY_KEY3, result);
-                        startActivity(intent);
-                    }
-
-                }
+                int result;
+                result = Val1 + Val2;
+                String fResult = Integer.toString(result);
+                Intent intent = new Intent(FunctionActivity.this, EqualActivity.class);
+                intent.putExtra(MY_KEY3, fResult);
+                startActivity(intent);
             }
         });
+
 
         btnSub = findViewById(R.id.btn_sub);
         btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // еще думаю
+                int result;
+                result = Val1 - Val2;
+                String fResult = Integer.toString(result);
+                Intent intent = new Intent(FunctionActivity.this, EqualActivity.class);
+                intent.putExtra(MY_KEY3, fResult);
+                startActivity(intent);
             }
         });
 
@@ -70,7 +72,12 @@ public class FunctionActivity extends AppCompatActivity {
         btnMulti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // еще думаю
+                int result;
+                result = Val1 * Val2;
+                String fResult = Integer.toString(result);
+                Intent intent = new Intent(FunctionActivity.this, EqualActivity.class);
+                intent.putExtra(MY_KEY3, fResult);
+                startActivity(intent);
             }
         });
 
@@ -79,11 +86,13 @@ public class FunctionActivity extends AppCompatActivity {
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // еще думаю
+                int result;
+                result = Val1 / Val2;
+                String fResult = Integer.toString(result);
+                Intent intent = new Intent(FunctionActivity.this, EqualActivity.class);
+                intent.putExtra(MY_KEY3, fResult);
+                startActivity(intent);
             }
         });
-
-
-
     }
 }
